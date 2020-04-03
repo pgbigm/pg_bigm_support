@@ -2,12 +2,47 @@
 
 ## Set up
 
-Download pg_bigm_support repository.
+### Prerequisite
+pg_bigm_support needs following RPM packages for RHEL 7.
+
+- gcc
+- rpm-build
+- llvm5.0
+- llvm-toolset-7
+
+You can install them using yum, but beware some of them are on epel and centos-release-scl repositories.
+
 ```
-$ git clone git@github.com:pgbigm/pg_bigm_support.git
+# yum install gcc rpm-build
+
+# yum install epel-release
+# yum install llvm5.0
+
+# yum install centos-release-scl
+# yum install llvm-toolset-7
+```
+`generate_rpm.sh` assumes that the user can sudo the following commands.
+
+- yum
+- hostname
+
+The following is an example of registering sudoers.
+
+```
+# visudo
+postgres ALL=NOPASSWD: /bin/yum
+postgres ALL=NOPASSWD: /bin/hostname
+```
+
+### Setup pg_bigm_support
+
+First, clone pg_bigm_support.
+
+```
+$ git clone https://github.com/pgbigm/pg_bigm_support.git
 $ cd pg_bigm_support
 ```
-Put source tarball at rpmbuild/SOURCES.
+Put source tarball at rpmbuild/SOURCES and rename it.
 ```
 /* Note that need to rename tarball in pg_bigm case. */
 $ tar zxvf pg_bigm-pg_bigm-1.2-20200228.tar.gz
@@ -23,7 +58,7 @@ Put following postgresql RPM files to `rpmtest/${WITHOUT_DOT_VERSION}` directory
   - postgresqlXX-server
   - postgresqlXX-llvmjit(PostgreSQL 11~)
 
-For example,
+For example, `rpmtest/12` should be as follows.
 ```
 $ ls -1 rpmtest/12/
 postgresql12-12.2-2PGDG.rhel7.x86_64.rpm
@@ -42,21 +77,8 @@ You can download RPM files using `yum install -downloadonly`.
   postgresql${VER}-libs postgresql${VER}-llvmjit; done
 ```
 
-`generate_rpm.sh` assumes that the user can sudo the following commands.
-
-- yum
-- hostname
-
-The following is an example of registering sudoers.
-
-```
-# visudo
-postgres ALL=NOPASSWD: /bin/yum
-postgres ALL=NOPASSWD: /bin/hostname
-```
-
 ## Directory Configuration
-After set up, direcotry configuration shoule be as follows.
+After set up, directory configuration shoule be as follows.
 
 ```
 ./pg_bigm_support
@@ -89,7 +111,7 @@ After set up, direcotry configuration shoule be as follows.
 ```
 
 ## Script Configuration
-Set environmental variables in generate_rpm.sh according to what kind of RPMs you want. 
+Set environmental variables in `generate_rpm.sh` according to what kind of RPMs you want. 
 You can change the PostgreSQL version using ${PG_VERSIONS}.
 
 ```
