@@ -42,15 +42,23 @@ First, clone pg_bigm_support.
 $ git clone https://github.com/pgbigm/pg_bigm_support.git
 $ cd pg_bigm_support
 ```
-Put source tarball at rpmbuild/SOURCES and rename it.
+
+Download pg_bigm source tarball from [GitHub releases](https://github.com/pgbigm/pg_bigm/releases) and rename it.
+Then put it in `rpmbuild/SOURCES`.
+
 ```
 /* Note that need to rename tarball in pg_bigm case. */
-$ tar zxvf pg_bigm-pg_bigm-1.2-20200228.tar.gz
-$ mv pg_bigm-pg_bigm-1.2-20200228 pg_bigm-1.2.20200228
-$ tar zcf pg_bigm-1.2.20200228.tar.gz pg_bigm-1.2.20200228
-/* Put source tarball */ 
+$ tar zxvf pg_bigm-1.2-20200228.tar.gz
+$ mv pg_bigm-1.2-20200228 pg_bigm-1.2.20200228
+$ tar zcvf pg_bigm-1.2.20200228.tar.gz pg_bigm-1.2.20200228
+
+/* Put source tarball */
 $ mv pg_bigm-1.2.20200228.tar.gz rpmbuild/SOURCES/
+
+/* Remove original tarball */
+$ rm pg_bigm-1.2-20200228.tar.gz
 ```
+
 Put following postgresql RPM files to `rpmtest/${WITHOUT_DOT_VERSION}` directory.
   - postgresqlXX
   - postgresqlXX-devel
