@@ -3,7 +3,7 @@
 PROGNAME=$(basename ${0})
 RPMBUILD="./rpmbuild"
 RPMTEST="./rpmtest"
-PG_VERSIONS="9.4 9.5 9.6 10 11 12"
+PG_VERSIONS="9.4 9.5 9.6 10 11 12 13"
 CURRENT=`pwd`
 LOGDIR="log/`date +"%Y%m%d_%H%M%S"`"
 
