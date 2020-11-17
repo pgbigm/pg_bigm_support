@@ -76,9 +76,10 @@ postgresql12-llvmjit-12.2-2PGDG.rhel7.x86_64.rpm
 postgresql12-server-12.2-2PGDG.rhel7.x86_64.rpm
 ```
 
-You can download RPM files using `yum install -downloadonly`.
+After you install the RPM repository, you can download RPM files using `yum install -downloadonly`.
 
 ```
+# yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 # for VER in 11 12; do
   yum install --downloadonly --downloaddir=rpmtest/${VER}/ \
   postgresql${VER} postgresql${VER}-server postgresql${VER}-devel \
@@ -123,7 +124,7 @@ Set environmental variables in `generate_rpm.sh` according to what kind of RPMs 
 You can change the PostgreSQL version using ${PG_VERSIONS}.
 
 ```
-PG_VERSIONS="9.4 9.5 9.6 10 11 12"
+PG_VERSIONS="9.4 9.5 9.6 10 11 12 13"
 ```
 
 ## Usage
