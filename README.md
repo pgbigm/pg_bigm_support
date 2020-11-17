@@ -76,9 +76,10 @@ postgresql12-llvmjit-12.2-2PGDG.rhel7.x86_64.rpm
 postgresql12-server-12.2-2PGDG.rhel7.x86_64.rpm
 ```
 
-You can download RPM files using `yum install -downloadonly`.
+After you install the RPM repository, you can download RPM files using `yum install -downloadonly`.
 
 ```
+# yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 # for VER in 11 12; do
   yum install --downloadonly --downloaddir=rpmtest/${VER}/ \
   postgresql${VER} postgresql${VER}-server postgresql${VER}-devel \
