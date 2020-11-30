@@ -21,17 +21,31 @@ You can install them using yum, but beware some of them are on epel and centos-r
 # yum install centos-release-scl
 # yum install llvm-toolset-7
 ```
+
+You need to create a postgres group and user to execute PostgreSQL.
+
+```
+# groupadd -g 26 -o -r postgres
+# useradd -M -g postgres -o -r -d /var/lib/pgsql -s /bin/bash -c "PostgreSQL Server" -u 26 postgres
+```
+
 `generate_rpm.sh` assumes that the user can sudo the following commands.
 
 - yum
 - hostname
 
-The following is an example of registering sudoers.
+Register sudoers as follows.
 
 ```
 # visudo
 postgres ALL=NOPASSWD: /bin/yum
 postgres ALL=NOPASSWD: /bin/hostname
+```
+
+Subsequent commands are performed by the postgres user.
+
+```
+# su - postgres
 ```
 
 ### Setup pg_bigm_support
