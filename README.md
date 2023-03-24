@@ -146,6 +146,8 @@ PG_VERSIONS="9.4 9.5 9.6 10 11 12 13"
 $ ./generate_rpm.sh -h <build hostname> -v <pg_bigm version> <specfile>
 ```
 
+NOTE: in pg_bigm, the build hostname is conventionally specified in the form of \<OS\>-\<CPU architecture\>-pgbigmbuild (e.g. centos7-x86-64-pgbigmbuild).
+
 ### Example
 ```
 $ ./generate_rpm.sh -h centos7-x86-64-pgbigmbuild -v 1.2.20200228 pg_bigm.spec
