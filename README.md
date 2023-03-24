@@ -138,7 +138,7 @@ Set environmental variables in `generate_rpm.sh` according to what kind of RPMs 
 You can change the PostgreSQL version using ${PG_VERSIONS}.
 
 ```
-PG_VERSIONS="9.4 9.5 9.6 10 11 12 13 14 15"
+PG_VERSIONS="11 12 13 14 15"
 ```
 
 ## Usage
