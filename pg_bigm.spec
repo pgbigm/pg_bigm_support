@@ -1,5 +1,5 @@
 # SPEC file template for pg_bigm
-# Portions Copyright (c) 2017-2020, pg_bigm Development Group
+# Portions Copyright (c) 2017-2024, pg_bigm Development Group
 # Portions Copyright (c) 2016, Sawada Masahiko
 
 ## These varibales use place holders.
