@@ -24,7 +24,7 @@ Release:    1.pg%{without_dot_version}%{?dist}
 License:    The PostgreSQL License
 Group:      Applications/Databases
 Source0:    %{name}-%{version}.tar.gz
-URL:        https://pgbigm.osdn.jp/index_en.html
+URL:        https://github.com/pgbigm/pg_bigm
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-%(%{__id_u} -n)
 Vendor:     pg_bigm Development Group
 
