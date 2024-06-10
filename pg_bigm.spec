@@ -1,5 +1,5 @@
 # SPEC file template for pg_bigm
-# Portions Copyright (c) 2017-2020, pg_bigm Development Group
+# Portions Copyright (c) 2017-2024, pg_bigm Development Group
 # Portions Copyright (c) 2016, Sawada Masahiko
 
 ## These varibales use place holders.
@@ -24,7 +24,7 @@ Release:    1.pg%{without_dot_version}%{?dist}
 License:    The PostgreSQL License
 Group:      Applications/Databases
 Source0:    %{name}-%{version}.tar.gz
-URL:        https://pgbigm.osdn.jp/index_en.html
+URL:        https://github.com/pgbigm/pg_bigm
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-%(%{__id_u} -n)
 Vendor:     pg_bigm Development Group
 
